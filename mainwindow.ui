@@ -43,7 +43,7 @@ border : 1px solid rgb(191, 191, 191);
 color: rgb(200, 200, 200);*/
 
 QFrame {
-    border: 1px solid rgb(191, 191, 191);
+    border: 0.5px solid rgb(191, 191, 191);
 }
 </string>
     </property>
@@ -164,9 +164,9 @@ QSlider::add-page:horizontal {
      <property name="geometry">
       <rect>
        <x>195</x>
-       <y>65</y>
+       <y>67</y>
        <width>50</width>
-       <height>22</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -200,7 +200,7 @@ QSpinBox::up-button, QSpinBox::down-button {
     <widget class="QLabel" name="labelSpeed">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>20</x>
        <y>50</y>
        <width>81</width>
        <height>16</height>
@@ -209,7 +209,7 @@ QSpinBox::up-button, QSpinBox::down-button {
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
 border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
+</string>
      </property>
      <property name="text">
       <string>Speed:</string>
@@ -218,7 +218,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
     <widget class="QLabel" name="labelMode">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>20</x>
        <y>120</y>
        <width>31</width>
        <height>16</height>
@@ -227,7 +227,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
 border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+background:none;</string>
      </property>
      <property name="text">
       <string>Mode:</string>
@@ -236,7 +236,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
     <widget class="QRadioButton" name="rotationModeRadio">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>70</x>
        <y>120</y>
        <width>70</width>
        <height>16</height>
@@ -244,8 +244,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+border:none;</string>
      </property>
      <property name="text">
       <string>회전수</string>
@@ -260,7 +259,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
     <widget class="QRadioButton" name="timeModeRadio">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>140</x>
        <y>120</y>
        <width>70</width>
        <height>16</height>
@@ -268,8 +267,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+border:none;</string>
      </property>
      <property name="text">
       <string>시간</string>
@@ -281,7 +279,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
     <widget class="QLabel" name="labelRotation">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>20</x>
        <y>140</y>
        <width>71</width>
        <height>16</height>
@@ -289,8 +287,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
      </property>
      <property name="styleSheet">
       <string notr="true">color:rgb(0, 0, 0);
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+border:none;</string>
      </property>
      <property name="text">
       <string>Rotation:</string>
@@ -769,9 +766,9 @@ QPushButton:disabled {
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>40</y>
+       <y>50</y>
        <width>451</width>
-       <height>161</height>
+       <height>151</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -797,17 +794,17 @@ QPushButton:disabled {
      </property>
      <property name="styleSheet">
       <string notr="true">QPlainTextEdit {
-    background: #1e1e2e;
+    background: white;
     border: none;
-    color: #cdd6f4;
+    color: black;
     font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
-    selection-background-color: #414559;
-    selection-color: #f5e0dc;
+    selection-background-color: #0078d4;
+    selection-color: white;
 }
 
 QPlainTextEdit:focus {
-    border: 1px solid #89b4fa;
-    background: #181825;
+    border: 1px solid #0078d4;
+    background: white;
 }</string>
      </property>
      <property name="readOnly">
@@ -849,60 +846,6 @@ QPushButton:hover {
        <width>14</width>
        <height>14</height>
       </size>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelSpeed_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>50</y>
-       <width>16</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #e74c3c;
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
-     </property>
-     <property name="text">
-      <string>●</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelMode_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>120</y>
-       <width>16</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #3498db;
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
-     </property>
-     <property name="text">
-      <string>●</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelRotation_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>140</y>
-       <width>21</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #27ae60;
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
-     </property>
-     <property name="text">
-      <string>●</string>
      </property>
     </widget>
     <widget class="QPushButton" name="closeButton">
@@ -1040,7 +983,7 @@ border:none;</string>
     <widget class="QRadioButton" name="cwModeRadio">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>70</x>
        <y>20</y>
        <width>70</width>
        <height>16</height>
@@ -1048,8 +991,7 @@ border:none;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+border:none;</string>
      </property>
      <property name="text">
       <string>CW</string>
@@ -1061,7 +1003,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
     <widget class="QRadioButton" name="ccwModeRadio">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>140</x>
        <y>20</y>
        <width>70</width>
        <height>16</height>
@@ -1069,8 +1011,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+border:none;</string>
      </property>
      <property name="text">
       <string>CCW</string>
@@ -1082,7 +1023,7 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
     <widget class="QLabel" name="labelSpeed_3">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>20</x>
        <y>20</y>
        <width>41</width>
        <height>16</height>
@@ -1091,28 +1032,10 @@ font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier Ne
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
 border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
+</string>
      </property>
      <property name="text">
-      <string>Dir</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelSpeed_4">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>16</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(170, 0, 255);
-border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
-     </property>
-     <property name="text">
-      <string>●</string>
+      <string>Direction:</string>
      </property>
     </widget>
     <widget class="QLabel" name="motorStatusLED">
@@ -1156,6 +1079,28 @@ background-color: none;</string>
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
+    <widget class="QLabel" name="titleLabel_2">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>20</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font: 600 13pt &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+    qproperty-alignment: 'AlignHCenter | AlignVCenter';
+}</string>
+     </property>
+     <property name="text">
+      <string>System Log:</string>
+     </property>
+    </widget>
     <zorder>motorStatusText</zorder>
     <zorder>hoursComboBox</zorder>
     <zorder>minutesComboBox</zorder>
@@ -1174,11 +1119,8 @@ background-color: none;</string>
     <zorder>setButton</zorder>
     <zorder>textEditInputLog</zorder>
     <zorder>stopButton</zorder>
-    <zorder>labelSpeed_2</zorder>
     <zorder>labelSpeed</zorder>
-    <zorder>labelMode_2</zorder>
     <zorder>labelMode</zorder>
-    <zorder>labelRotation_2</zorder>
     <zorder>labelRotation</zorder>
     <zorder>closeButton</zorder>
     <zorder>reloadButton</zorder>
@@ -1187,9 +1129,9 @@ background-color: none;</string>
     <zorder>labelSet_4</zorder>
     <zorder>cwModeRadio</zorder>
     <zorder>ccwModeRadio</zorder>
-    <zorder>labelSpeed_4</zorder>
     <zorder>labelSpeed_3</zorder>
     <zorder>motorStatusLED</zorder>
+    <zorder>titleLabel_2</zorder>
    </widget>
    <widget class="QFrame" name="frameOuput">
     <property name="geometry">
@@ -1202,7 +1144,7 @@ background-color: none;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QFrame {
-    border: 1px solid rgb(191, 191, 191);
+    border: 0.5px solid rgb(191, 191, 191);
 }</string>
     </property>
     <property name="frameShape">
@@ -1223,7 +1165,6 @@ background-color: none;</string>
      <property name="styleSheet">
       <string notr="true">QFrame {
     border: 1px solid rgb(200, 200, 200);
-    border-radius: 6px;
     background:none;
 }</string>
      </property>
@@ -1239,8 +1180,8 @@ background-color: none;</string>
       <property name="styleSheet">
        <string notr="true">color: rgb(78, 157, 235);
 border:none;
-font: 700 10pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
-background: transparent;</string>
+background: transparent;
+font:500 11pt;</string>
       </property>
       <property name="text">
        <string>Rotation</string>
@@ -1297,8 +1238,8 @@ background: transparent;</string>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 87, 34);
 border:none;
-font: 700 12pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
-background: transparent;</string>
+background: transparent;
+font:500 11pt;</string>
       </property>
       <property name="text">
        <string>0 / 0 회전</string>
@@ -1319,7 +1260,6 @@ background: transparent;</string>
       <property name="styleSheet">
        <string notr="true">color: rgb(100, 100, 100);
 border:none;
-font: 500 10pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
 background: transparent;</string>
       </property>
       <property name="text">
@@ -1371,7 +1311,6 @@ QProgressBar::chunk {
      <property name="styleSheet">
       <string notr="true">QFrame {
     border: 1px solid rgb(200, 200, 200);
-    border-radius: 6px;
     background:none;
 }</string>
      </property>
@@ -1386,9 +1325,10 @@ QProgressBar::chunk {
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(0, 85, 255);
+
 border:none;
-font: 700 10pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
-background: transparent;</string>
+background: transparent;
+font:500 11pt;</string>
       </property>
       <property name="text">
        <string>Time</string>
@@ -1445,8 +1385,8 @@ background: transparent;</string>
       <property name="styleSheet">
        <string notr="true">color: rgb(0, 85, 255);
 border:none;
-font: 700 16pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
-background: transparent;</string>
+background: transparent;
+font:500 11pt;</string>
       </property>
       <property name="text">
        <string>00:00:00</string>
@@ -1467,7 +1407,6 @@ background: transparent;</string>
       <property name="styleSheet">
        <string notr="true">color: rgb(100, 100, 100);
 border:none;
-font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
 background: transparent;</string>
       </property>
       <property name="text">
@@ -1527,8 +1466,8 @@ QProgressBar::chunk {
    <widget class="QLabel" name="dateTimeLabel">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>6</y>
+      <x>290</x>
+      <y>20</y>
       <width>281</width>
       <height>31</height>
      </rect>
@@ -1538,12 +1477,12 @@ QProgressBar::chunk {
     background: none;
     border: none;
     color: #1a1a1a;
-    font: 700 14pt &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+    font: 700 13pt &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
     qproperty-alignment: 'AlignHCenter | AlignVCenter';
 }</string>
     </property>
     <property name="text">
-     <string>25.06.25 AM 09:45:01</string>
+     <string>25.06.25 DAY 09:45:01</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -1551,7 +1490,7 @@ QProgressBar::chunk {
      <rect>
       <x>40</x>
       <y>371</y>
-      <width>51</width>
+      <width>91</width>
       <height>16</height>
      </rect>
     </property>
@@ -1561,7 +1500,7 @@ background:rgb(255, 250, 250);
 </string>
     </property>
     <property name="text">
-     <string>Output</string>
+     <string>Motor Status</string>
     </property>
     <property name="scaledContents">
      <bool>false</bool>
@@ -1679,17 +1618,17 @@ QListView {
      </property>
      <property name="styleSheet">
       <string notr="true">QPlainTextEdit {
-    background: #1e1e2e;
+    background: white;
     border: none;
-    color: #cdd6f4;
+    color: black;
     font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
-    selection-background-color: #414559;
-    selection-color: #f5e0dc;
+    selection-background-color: #0078d4;
+    selection-color: white;
 }
 
 QPlainTextEdit:focus {
-    border: 1px solid #89b4fa;
-    background: #181825;
+    border: 1px solid #0078d4;
+    background: white;
 }</string>
      </property>
      <property name="verticalScrollBarPolicy">
@@ -1865,7 +1804,7 @@ QPushButton:disabled {
      <rect>
       <x>40</x>
       <y>101</y>
-      <width>41</width>
+      <width>101</width>
       <height>20</height>
      </rect>
     </property>
@@ -1876,7 +1815,7 @@ background:rgb(255, 250, 250);
 </string>
     </property>
     <property name="text">
-     <string>Input</string>
+     <string>Motor Control</string>
     </property>
     <property name="scaledContents">
      <bool>false</bool>
@@ -1919,6 +1858,9 @@ background:rgb(255, 250, 250);
       <height>25</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>프로그램 정보</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     background-color: rgba(52, 152, 219, 0.8);
@@ -1940,10 +1882,30 @@ QPushButton:pressed {
     <property name="text">
      <string>i</string>
     </property>
-    <property name="toolTip">
-     <string>프로그램 정보</string>
+   </widget>
+   <widget class="QLabel" name="titleLabel">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font: 700 14pt &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+    qproperty-alignment: 'AlignHCenter | AlignVCenter';
+}</string>
+    </property>
+    <property name="text">
+     <string>Stepper Motor Control System</string>
     </property>
    </widget>
+   <zorder>titleLabel</zorder>
    <zorder>frameInput</zorder>
    <zorder>frameOuput</zorder>
    <zorder>dateTimeLabel</zorder>
