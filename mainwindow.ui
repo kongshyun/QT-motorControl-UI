@@ -1,0 +1,1987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>671</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Agency FB</family>
+   </font>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>StepperTest</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 250, 250);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frameInput">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>761</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*background:none;
+border : 1px solid rgb(191, 191, 191);
+color: rgb(200, 200, 200);*/
+
+QFrame {
+    border: 1px solid rgb(191, 191, 191);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <widget class="QPushButton" name="goButton">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>210</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background: none;
+    border: 1px solid #3e4555;
+    color: #3e4555;
+ 
+}
+
+QPushButton:hover {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #4a5068;
+	font: 700 bold 10pt &quot;맑은 고딕&quot;;
+}
+
+QPushButton:pressed {
+    background: #252938;
+    font: 700 10pt &quot;맑은 고딕&quot;;
+
+}
+
+QPushButton:disabled {
+    background: rgba(255,250,250,0.5);
+    border: 1px solid rgb(190, 190, 190);
+    color: #6b7280;
+}</string>
+     </property>
+     <property name="text">
+      <string>GO</string>
+     </property>
+    </widget>
+    <widget class="QSlider" name="speedSlider">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>71</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider {
+    background: none;
+    border: none;         /* ✅ 테두리 제거 */
+}
+QSlider::handle:horizontal {
+    background: rgb(100, 150, 250); 
+    border: 1px solid rgb(100, 150, 250);  ;
+    width: 5px;
+    margin: -3px 0;       /* 중앙 정렬 */
+    border-radius: 2px;
+}
+QSlider::handle:horizontal:hover{
+    background: rgb(255, 255, 255); /* 원하는 눌림 색상 */
+    border: none;
+}
+QSlider::handle:horizontal:pressed {
+    background: rgb(255, 255, 255);  /* 원하는 눌림 색상 */
+    border: none;
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(0, 0, 67);
+    height: 2px;
+    border-radius: 1px;
+}
+
+QSlider::add-page:horizontal {
+    background: #cccccc;   /* 핸들 오른쪽, 남은 선 */
+    height: 2px;
+    border-radius: 1px;
+}
+</string>
+     </property>
+     <property name="minimum">
+      <number>6</number>
+     </property>
+     <property name="maximum">
+      <number>214</number>
+     </property>
+     <property name="singleStep">
+      <number>1</number>
+     </property>
+     <property name="pageStep">
+      <number>10</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TickPosition::TicksBelow</enum>
+     </property>
+     <property name="tickInterval">
+      <number>20</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="speedSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>195</x>
+       <y>65</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox {
+    border: 1px solid lightgray;
+    padding: 2px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font: 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+}
+
+QSpinBox:focus {
+    border: 1px solid rgb(0, 120, 215);
+    outline: none;
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    width: 16px;
+}</string>
+     </property>
+     <property name="minimum">
+      <number>6</number>
+     </property>
+     <property name="maximum">
+      <number>214</number>
+     </property>
+     <property name="value">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSpeed">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
+     </property>
+     <property name="text">
+      <string>Speed:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMode">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>120</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>Mode:</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rotationModeRadio">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>120</y>
+       <width>70</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>회전수</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">modeButtonGroup</string>
+     </attribute>
+    </widget>
+    <widget class="QRadioButton" name="timeModeRadio">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>120</y>
+       <width>70</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>시간</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">modeButtonGroup</string>
+     </attribute>
+    </widget>
+    <widget class="QLabel" name="labelRotation">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>Rotation:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="getButton">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>210</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background: none;
+    border: 1px solid #3e4555;
+    color: #3e4555;
+ 
+}
+
+QPushButton:hover {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #4a5068;
+	font: 700 bold 10pt &quot;맑은 고딕&quot;;
+}
+
+QPushButton:pressed {
+    background: #252938;
+    font: 700 10pt &quot;맑은 고딕&quot;;
+
+}
+
+QPushButton:disabled {
+    background: rgba(255,250,250,0.5);
+    border: 1px solid rgb(190, 190, 190);
+    color: #6b7280;
+}</string>
+     </property>
+     <property name="text">
+      <string>GET</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="rotationSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>160</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox {
+    border: 1px solid lightgray;
+    padding: 2px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+}
+
+QSpinBox:focus {
+    border: 1px solid rgb(0, 120, 215); /* Windows-style 파란 테두리 */
+    outline: none;
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    width: 16px;
+}
+</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="hoursComboBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>165</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font: 9pt &quot;맑은 고딕&quot;;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    width: 15px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 8px;
+    height: 8px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="minutesComboBox">
+     <property name="geometry">
+      <rect>
+       <x>85</x>
+       <y>165</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font: 9pt &quot;맑은 고딕&quot;;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    width: 15px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 8px;
+    height: 8px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="secondsComboBox">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>165</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font: 9pt &quot;맑은 고딕&quot;;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    width: 15px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 8px;
+    height: 8px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeLabel1">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>168</y>
+       <width>6</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeLabel2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>168</y>
+       <width>6</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeUnitLabel">
+     <property name="geometry">
+      <rect>
+       <x>205</x>
+       <y>153</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 8pt &quot;맑은 고딕&quot;</string>
+     </property>
+     <property name="text">
+      <string>(시:분:초)</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>171</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="speednumberLabel">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>4</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>36</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>66</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>96</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>126</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>156</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_17">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>186</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(33, 33, 33);
+font: 7pt &quot;맑은 고딕&quot;;
+border:none;</string>
+        </property>
+        <property name="text">
+         <string>214</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="setButton">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>210</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background: none;
+    border: 1px solid #3e4555;
+    color: #3e4555;
+ 
+}
+
+QPushButton:hover {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #4a5068;
+	font: 700 bold 10pt &quot;맑은 고딕&quot;;
+}
+
+QPushButton:pressed {
+    background: #252938;
+    font: 700 10pt &quot;맑은 고딕&quot;;
+
+}
+
+QPushButton:disabled {
+    background: rgba(255,250,250,0.5);
+    border: 1px solid rgb(190, 190, 190);
+    color: #6b7280;
+}</string>
+     </property>
+     <property name="text">
+      <string>SET</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="textEditInputLog">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>40</y>
+       <width>451</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPlainTextEdit {
+    background: #1e1e2e;
+    border: none;
+    color: #cdd6f4;
+    font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+    selection-background-color: #414559;
+    selection-color: #f5e0dc;
+}
+
+QPlainTextEdit:focus {
+    border: 1px solid #89b4fa;
+    background: #181825;
+}</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="stopButton">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>210</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+        background-color:rgba(93, 163, 255,0.3);
+        border-radius:15px;
+}
+
+QPushButton:hover {
+        background-color:none;
+        border:2px solid rgb(93, 163, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="images.qrc">
+       <normaloff>:/new/prefix1/images/pause.png</normaloff>:/new/prefix1/images/pause.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>14</width>
+       <height>14</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSpeed_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>50</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #e74c3c;
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
+     </property>
+     <property name="text">
+      <string>●</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMode_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>120</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #3498db;
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>●</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelRotation_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #27ae60;
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>●</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="closeButton">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>210</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+        background-color:rgba(255,0,0,0.2);
+        border-radius:15px;
+}
+
+QPushButton:hover {
+        background-color:none;
+        border:2px solid rgba(255,0,0,0.5);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="images.qrc">
+       <normaloff>:/new/prefix1/images/close.png</normaloff>:/new/prefix1/images/close.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>12</width>
+       <height>12</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reloadButton">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>210</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+        background-color:rgba(255, 255, 127,0.5);
+        border-radius:15px;
+}
+
+QPushButton:hover {
+        background-color:none;
+        border:2px solid rgb(252, 237, 34);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="images.qrc">
+       <normaloff>:/new/prefix1/images/reload.png</normaloff>:/new/prefix1/images/reload.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>14</width>
+       <height>14</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSet_2">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>210</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background:none;
+border:none;
+</string>
+     </property>
+     <property name="text">
+      <string>정지</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSet_3">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>210</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background:none;
+border:none;</string>
+     </property>
+     <property name="text">
+      <string>종료</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSet_4">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>210</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background:none;
+border:none;</string>
+     </property>
+     <property name="text">
+      <string>재개</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="cwModeRadio">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>20</y>
+       <width>70</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>CW</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="ccwModeRadio">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>20</y>
+       <width>70</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace</string>
+     </property>
+     <property name="text">
+      <string>CCW</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSpeed_3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
+     </property>
+     <property name="text">
+      <string>Dir</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSpeed_4">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(170, 0, 255);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;</string>
+     </property>
+     <property name="text">
+      <string>●</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="motorStatusLED">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>10</y>
+       <width>24</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    background-color: gray;
+    border: 2px solid #666;
+    border-radius: 12px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="motorStatusText">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>70</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+background-color: none;</string>
+     </property>
+     <property name="text">
+      <string>모터상태</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <zorder>motorStatusText</zorder>
+    <zorder>hoursComboBox</zorder>
+    <zorder>minutesComboBox</zorder>
+    <zorder>secondsComboBox</zorder>
+    <zorder>timeLabel1</zorder>
+    <zorder>timeLabel2</zorder>
+    <zorder>timeUnitLabel</zorder>
+    <zorder>rotationModeRadio</zorder>
+    <zorder>timeModeRadio</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>goButton</zorder>
+    <zorder>getButton</zorder>
+    <zorder>speedSlider</zorder>
+    <zorder>speedSpinBox</zorder>
+    <zorder>rotationSpinBox</zorder>
+    <zorder>setButton</zorder>
+    <zorder>textEditInputLog</zorder>
+    <zorder>stopButton</zorder>
+    <zorder>labelSpeed_2</zorder>
+    <zorder>labelSpeed</zorder>
+    <zorder>labelMode_2</zorder>
+    <zorder>labelMode</zorder>
+    <zorder>labelRotation_2</zorder>
+    <zorder>labelRotation</zorder>
+    <zorder>closeButton</zorder>
+    <zorder>reloadButton</zorder>
+    <zorder>labelSet_2</zorder>
+    <zorder>labelSet_3</zorder>
+    <zorder>labelSet_4</zorder>
+    <zorder>cwModeRadio</zorder>
+    <zorder>ccwModeRadio</zorder>
+    <zorder>labelSpeed_4</zorder>
+    <zorder>labelSpeed_3</zorder>
+    <zorder>motorStatusLED</zorder>
+   </widget>
+   <widget class="QFrame" name="frameOuput">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>380</y>
+      <width>761</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+    border: 1px solid rgb(191, 191, 191);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QFrame" name="rotationProgressFrame">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>240</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame {
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 6px;
+    background:none;
+}</string>
+     </property>
+     <widget class="QLabel" name="rotationModeTitle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>5</y>
+        <width>220</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(78, 157, 235);
+border:none;
+font: 700 10pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Rotation</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="circularProgressWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>80</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border: none;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rotationPercentLabel">
+      <property name="geometry">
+       <rect>
+        <x>35</x>
+        <y>50</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(78, 157, 235);
+border:none;
+font: 700 14pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rotationCountDisplay">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>30</y>
+        <width>120</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 87, 34);
+border:none;
+font: 700 12pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>0 / 0 회전</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rotationSpeedDisplay">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>55</y>
+        <width>120</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(100, 100, 100);
+border:none;
+font: 500 10pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>0 RPM</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="rotationLinearProgress">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>80</y>
+        <width>120</width>
+        <height>8</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: rgb(78, 157, 235);
+    border-radius: 4px;
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="timeProgressFrame">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>240</width>
+       <height>120</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame {
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 6px;
+    background:none;
+}</string>
+     </property>
+     <widget class="QLabel" name="timeModeTitle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>5</y>
+        <width>220</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 85, 255);
+border:none;
+font: 700 10pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Time</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="timeCircularProgressWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>80</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border: none;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="timePercentLabel">
+      <property name="geometry">
+       <rect>
+        <x>35</x>
+        <y>55</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 85, 255);
+border:none;
+font: 700 14pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="timeRemainingDisplay">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>35</y>
+        <width>120</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 85, 255);
+border:none;
+font: 700 16pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>00:00:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="elapsedTimeLabel">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>65</y>
+        <width>120</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(100, 100, 100);
+border:none;
+font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>경과: 00:00:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="timeLinearProgress">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>90</y>
+        <width>120</width>
+        <height>8</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: rgb(0, 85, 255);
+    border-radius: 4px;
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="MotorLoadGraphWidget" name="motorLoadGraphWidget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>259</x>
+       <y>9</y>
+       <width>491</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+    border: 1px solid rgb(200, 200, 200);
+    background-color: rgba(255, 255, 255, 0.95);
+}</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="dateTimeLabel">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>6</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font: 700 14pt &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+    qproperty-alignment: 'AlignHCenter | AlignVCenter';
+}</string>
+    </property>
+    <property name="text">
+     <string>25.06.25 AM 09:45:01</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>371</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);/*rgb(170, 37, 61);*/
+background:rgb(255, 250, 250);
+</string>
+    </property>
+    <property name="text">
+     <string>Output</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frameConnect">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>761</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QFrame {
+    border: 1px solid rgb(191, 191, 191);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QComboBox" name="portComboBox">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: transparent;
+    color: black;
+    padding: 4px;
+    font-weight: normal;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    background: transparent;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 20px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+QListView {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    font-weight: normal;
+    selection-background-color: rgb(0, 120, 215);  /* Windows 파란색 */
+    selection-color: white;
+}
+</string>
+     </property>
+     <property name="locale">
+      <locale language="Korean" country="SouthKorea"/>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Select Port</string>
+     </property>
+     <property name="duplicatesEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="textEditConnect">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>19</y>
+       <width>401</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPlainTextEdit {
+    background: #1e1e2e;
+    border: none;
+    color: #cdd6f4;
+    font: 500 9pt &quot;JetBrains Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;, monospace;
+    selection-background-color: #414559;
+    selection-color: #f5e0dc;
+}
+
+QPlainTextEdit:focus {
+    border: 1px solid #89b4fa;
+    background: #181825;
+}</string>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>textEditConnect</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="logOutput_2">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>60</y>
+       <width>491</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="connectButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>70</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background: none;
+    border: 1px solid #3e4555;
+    color: #3e4555;
+ 
+}
+
+QPushButton:hover {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #4a5068;
+	font: 700 bold 10pt &quot;맑은 고딕&quot;;
+}
+
+QPushButton:pressed {
+    background: #252938;
+    font: 700 10pt &quot;맑은 고딕&quot;;
+
+}
+
+QPushButton:disabled {
+    background: rgba(255,250,250,0.5);
+    border: 1px solid rgb(190, 190, 190);
+    color: #6b7280;
+}</string>
+     </property>
+     <property name="text">
+      <string> Connect</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="disconnectButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>20</y>
+       <width>70</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background: none;
+    border: 1px solid #3e4555;
+    color: #3e4555;
+ 
+}
+
+QPushButton:hover {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #4a5068;
+}
+
+QPushButton:pressed {
+    background: #252938;
+    border: 1px solid #2a2f42;
+}
+
+QPushButton:disabled {
+    background: rgb(255,250,250);
+    border: 1px solid rgb(190, 190, 190);
+    color: rgb(74, 74, 74);
+}</string>
+     </property>
+     <property name="text">
+      <string>Disconnect</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="statusLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    background-color: gray;
+    border:1px solid gray;
+	border-radius:8px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>101</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);/*rgb(170, 37, 61);*/
+background:rgb(255, 250, 250);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Input</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);/*rgb(170, 37, 61);*/
+background:rgb(255, 250, 250);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Serial Connection</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="infoButton">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>10</y>
+      <width>25</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgba(52, 152, 219, 0.8);
+    border: 1px solid #2980b9;
+    border-radius: 12px;
+    color: white;
+    font: bold 14pt;
+}
+
+QPushButton:hover {
+    background-color: rgba(52, 152, 219, 1.0);
+    border: 2px solid #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: rgba(41, 128, 185, 1.0);
+}</string>
+    </property>
+    <property name="text">
+     <string>i</string>
+    </property>
+    <property name="toolTip">
+     <string>프로그램 정보</string>
+    </property>
+   </widget>
+   <zorder>frameInput</zorder>
+   <zorder>frameOuput</zorder>
+   <zorder>dateTimeLabel</zorder>
+   <zorder>frameConnect</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>infoButton</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRelease_information">
+   <property name="text">
+    <string>Release information</string>
+   </property>
+  </action>
+  <action name="actionHi_Im_Sihyun">
+   <property name="text">
+    <string>Hi Im Sihyun</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MotorLoadGraphWidget</class>
+   <extends>QWidget</extends>
+   <header>motorloadgraphwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="modeButtonGroup">
+   <property name="exclusive">
+    <bool>true</bool>
+   </property>
+  </buttongroup>
+ </buttongroups>
+</ui>

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>images/FS_LOGO.png</file>
+        <file>images/down-arrow.png</file>
+        <file>images/close.png</file>
+        <file>images/pause.png</file>
+        <file>images/reload.png</file>
+    </qresource>
+</RCC>
